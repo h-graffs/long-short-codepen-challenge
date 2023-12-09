@@ -1,0 +1,122 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+	background-image: linear-gradient(-45deg, #CC0000, #CC00FF, #00FFCC, #0000FF);
+	background-size: 150% 250%;
+	animation: gradient 7s ease infinite;
+	animation-direction: alternate;
+}
+
+@keyframes gradient {
+	0% {background-position: 0% 50%};
+	50% {background-position: 100% 50%};
+	100% {background-position: 0% 50%};
+}
+
+#text-div {
+	background-color: #000;
+	text-align: left;
+	width: 65%;
+	margin-top: 200px;
+}	
+
+.text {
+	color: #FFF;
+	font-family: Rubik;
+	font-size: 2.5em;
+}
+
+#stars-container {
+	display: flex;
+	justify-content: center;
+	height: 150px;
+	width: auto;
+}
+
+@media (max-width: 890px) {
+  #stars-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    row-gap: 100px;
+		margin: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  #stars-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    row-gap: 100px;
+		margin: auto;
+  }
+}
+
+#img1-div, #img2-div, #img3-div, #img4-div {
+	margin: 100px 40px 0 40px;
+}
+
+@media (max-width: 890px) {
+	#img1-div, #img2-div, #img3-div, #img4-div {
+	margin: 50px auto;
+	}
+	
+	#text-div {
+		margin-top: 50px;
+	}
+}
+
+@media (max-width: 500px) {
+	#img1-div, #img2-div, #img3-div, #img4-div {
+	margin: auto;
+	}
+}
+
+.img-div {
+	justify-content: center;
+	background-color: #000;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+}
+
+#img1, #img2, #img3, #img4 {	
+	width: 150px;
+	height: 150px;
+	margin: auto auto;
+	border-radius: 50%;
+}
+
+#img1-div:hover > #img1 {
+	transition: transform 0.7s;
+	transform: perspective(0px) rotate3d(0, 1, 0, -360deg);
+}
+
+#img2-div:hover > #img2 {
+	transition: transform 1.5s;
+  transform: perspective(1000px) rotate3d(1, 0, 0, 720deg);
+}
+
+#img3-div:hover > #img3 {
+	animation: scale 3s infinite;
+}
+
+@keyframes scale {
+	0%, 100% {transform: scale(1)}
+	50% {transform: scale(3.5)}
+}
+
+#img4-div:hover > #img4 {
+	transition: transform 7s;
+	animation: skew 4s;
+	transform: skew(360deg, 360deg);
+}
+
+
+
